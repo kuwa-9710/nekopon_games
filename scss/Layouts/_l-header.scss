@@ -1,0 +1,76 @@
+@use "../Global/" as *;
+
+.l-header {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 30px;
+}
+
+.l-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.l-header__menu__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 27px;
+}
+
+.l-header__menu__item {
+  color: $cGreen;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.l-header .c-button {
+  margin-top: 0;
+}
+
+/* =================================================
+ tab
+=================================================== */
+@include media(tab) {
+  .l-header {
+    padding: 0 20px;
+  }
+  .l-header__logo {
+    & img {
+      width: 120px;
+    }
+  }
+  .l-header__menu__item {
+    &:last-child {
+      display: none;
+    }
+  }
+}
+
+/* =================================================
+ sp
+=================================================== */
+@include media(sp) {
+  .l-header {
+    height: 55px;
+  }
+  .l-header__menu__inner {
+    gap: 19px;
+  }
+  .l-header__menu__item {
+    font-size: 13px;
+    line-height: 14px;
+    letter-spacing: 0;
+  }
+}

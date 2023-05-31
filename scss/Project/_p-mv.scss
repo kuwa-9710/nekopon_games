@@ -1,0 +1,99 @@
+@use "../Global/" as *;
+
+.p-mv {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.p-mv__inner {
+  padding: 16px 30px 0 30px;
+  color: $cWhite;
+  width: 100%;
+  max-width: calc(1120px + 60px);
+  margin: 0 auto;
+}
+
+.p-mv__sub {
+  padding-left: 18px;
+  font-family: "Exo", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.p-mv__title {
+  margin-top: 24px;
+  font-family: "Exo", sans-serif;
+  font-size: 140px;
+  font-weight: 600;
+  line-height: 126px;
+  letter-spacing: 0.05em;
+}
+
+.p-mv__text {
+  margin-top: 10px;
+  display: block;
+  font-weight: 500;
+  font-size: 34px;
+  letter-spacing: 1em;
+}
+
+.p-mv .c-button {
+  font-size: 18px;
+  margin-top: 24px;
+  padding: 16px 64px;
+}
+
+/* =================================================
+ tab
+=================================================== */
+@include media(tab) {
+  .p-mv__sub {
+    font-size: 22px;
+  }
+
+  .p-mv__title {
+    margin-top: 20px;
+    font-size: 76px;
+    line-height: 68.4px;
+  }
+
+  .p-mv__text {
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 0.6em;
+  }
+
+  .p-mv .c-button {
+    margin-top: 50px;
+    padding: 20px 42px;
+    font-size: 16px;
+  }
+}
+
+/* =================================================
+ sp
+=================================================== */
+@include media(sp) {
+  .p-mv__sub {
+    padding-top: 5px;
+  }
+  .p-mv__title {
+    padding-left: 10px;
+    margin-top: 6px;
+  }
+  .p-mv__text {
+    padding-left: 10px;
+  }
+  .p-mv__inner {
+    height: 300px;
+    padding: 0 30px;
+  }
+  .p-mv .c-button {
+    margin-top: 28px;
+    margin-left: 10px;
+    padding: 17px 42px;
+  }
+}

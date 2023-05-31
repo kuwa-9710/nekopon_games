@@ -1,0 +1,86 @@
+@use "../Global" as *;
+
+.p-trailer {
+  position: relative;
+  background-color: $cGreen;
+
+  .c-title {
+    padding-top: 105px;
+    color: $cBlack;
+
+    &::after {
+      background-color: $cBlack;
+      bottom: -20px;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    height: 41px;
+    width: 430px;
+    background-color: $cGreen;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  &::after {
+    height: 40px;
+    top: auto;
+    right: auto;
+    left: 0;
+    bottom: -39px;
+    clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+  }
+}
+
+.p-trailer__inner {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding-bottom: 110px;
+}
+
+.p-trailer__video {
+  padding-top: 70px;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+/* =================================================
+ sp
+=================================================== */
+@include media(sp) {
+  .p-trailer {
+    &::before,
+    &::after {
+      height: 31px;
+      width: 200px;
+      top: -30px;
+    }
+
+    &::after {
+      top: auto;
+      bottom: -30px;
+    }
+
+    .c-title {
+      padding-top: 37px;
+
+      &::after {
+        bottom: 0;
+        left: 5px;
+      }
+    }
+  }
+
+  .p-trailer__inner {
+    padding: 0 20px 54px 20px;
+  }
+
+  .p-trailer__video {
+    padding-top: 29px;
+  }
+}

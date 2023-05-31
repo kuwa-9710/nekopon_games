@@ -1,0 +1,49 @@
+@use "../Global/" as *;
+
+.c-news {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  bottom: 50px;
+  right: 30px;
+  border: 1px solid $cGreen;
+  width: 360px;
+  padding: 8px 0;
+  overflow: hidden;
+  background-color: $cBlack;
+  color: $cWhite;
+  font-family: "Exo", "sans-serif";
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.c-news__text {
+  display: inline-block;
+  white-space: nowrap;
+  & span {
+    padding-left: 20px;
+    color: $cGreen;
+  }
+
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* =================================================
+ sp
+=================================================== */
+@include media(sp) {
+  .c-news {
+    width: 200px;
+    right: 20px;
+    font-size: 12px;
+  }
+}

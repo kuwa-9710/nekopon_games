@@ -1,0 +1,80 @@
+@use "../Global/" as *;
+
+.c-scroll {
+  display: inline-block;
+  position: absolute;
+  bottom: 26px;
+  left: 22px;
+  color: $cGreen;
+  transform: rotate(90deg);
+}
+
+.c-scroll__inner {
+  font-family: "Exo", "sans-serif";
+  font-size: 13px;
+  font-weight: 700;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $cGreen;
+  }
+
+  /* =================================================
+   line
+  =================================================== */
+  &::before {
+    height: 2px;
+    width: 50px;
+    bottom: -8px;
+    left: -7px;
+  }
+
+  /* =================================================
+   ball
+  =================================================== */
+  &::after {
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    bottom: -50%;
+    opacity: 0;
+    left: -7px;
+    animation: circlemove 2s ease-in-out infinite,
+      cirlemovehide 2s ease-out infinite;
+  }
+}
+@keyframes circlemove {
+  0% {
+    left: -7px;
+  }
+  100% {
+    left: 35px;
+  }
+}
+
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =================================================
+ sp
+=================================================== */
+@include media(sp) {
+  .c-scroll {
+    bottom: 34px;
+    left: 24px;
+  }
+}

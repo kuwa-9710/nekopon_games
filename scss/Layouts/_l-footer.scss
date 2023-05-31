@@ -1,0 +1,62 @@
+@use "../Global/" as *;
+
+.l-footer {
+  position: relative;
+  background-color: $cBlack;
+
+  &::before {
+    content: "";
+    height: 40px;
+    width: 430px;
+    background-color: $cBlack;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+.l-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+.l-footer__copylight {
+  font-family: "Exo", "sans-serif";
+  color: $cWhite;
+  font-weight: bold;
+  font-size: 14ox;
+  letter-spacing: 0.05em;
+}
+
+/* =================================================
+ tab
+=================================================== */
+@include media(tab) {
+  .l-footer {
+    &::before {
+      content: "";
+      height: 30px;
+      width: 200px;
+      top: -30px;
+    }
+  }
+
+  .l-footer__inner {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .l-footer__copylight {
+    font-size: 11px;
+  }
+
+  .l-footer__icons img {
+    width: 100%;
+  }
+}

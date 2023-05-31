@@ -1,0 +1,44 @@
+@use "../Global" as *;
+
+.c-cta {
+  background-color: transparent;
+}
+
+.c-cta__inner {
+  padding: 104px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-cta__title {
+  color: $cWhite;
+  font-family: "Exo", "sans-serif";
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+}
+
+.c-cta .c-button {
+  margin-top: 22px;
+  width: fit-content;
+  font-size: 18px;
+  padding: 16px 64px;
+}
+
+/* =================================================
+ sp
+=================================================== */
+@include media(sp) {
+  .c-cta__inner {
+    padding: 67px 0;
+  }
+  .c-cta__title {
+    font-size: 32px;
+    text-align: center;
+  }
+  .c-cta .c-button {
+    padding: 16px 38px;
+  }
+}
